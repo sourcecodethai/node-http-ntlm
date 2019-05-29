@@ -30,12 +30,23 @@ exports.method = function(method, options, finalCallback){
 	// set keepaliveAgent (http or https):
 	var keepaliveAgent;
 
+	// if(isHttps){
+	// 	keepaliveAgent = new https.Agent({keepAlive: true});
+	// }else{
+	// 	keepaliveAgent = new http.Agent({keepAlive: true});
+	// }
+
 	if(isHttps){
-		keepaliveAgent = new https.Agent({keepAlive: true});
+		var ssl_agent;
+		if(options.ssl_agent){
+			ssl_agent = options.ssl_agent;
+		}else{
+			ssl_agent = {keepAlive: true};
+		}
+		keepaliveAgent = new https.Agent(ssl_agent);
 	}else{
 		keepaliveAgent = new http.Agent({keepAlive: true});
 	}
-
 	// build type1 request:
 
 	function sendType1Message (callback) {
