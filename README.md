@@ -1,6 +1,6 @@
 # httpntlm
 
-__httpntlm__ is a Node.js library to do HTTP NTLM authentication
+For of __httpntlm__ is a Node.js library to do HTTP NTLM authentication
 
 It's a port from the Python libary [python-ntml](https://code.google.com/p/python-ntlm/)
 
@@ -8,7 +8,7 @@ It's a port from the Python libary [python-ntml](https://code.google.com/p/pytho
 
 You can install __httpntlm__ using the Node Package Manager (npm):
 
-    npm install httpntlm
+    npm install sc-httpntlm
 
 ## How to use
 
